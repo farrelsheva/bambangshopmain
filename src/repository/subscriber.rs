@@ -1,5 +1,6 @@
 use dashmap::DashMap;
 use lazy_static::lazy_static;
+use rocket::time::PrimitiveDateTime;
 use crate::model::subscriber::Subscriber;
 
 //singleton
@@ -20,6 +21,15 @@ impl SubscriberRepository{
         SUBSCRIBERS.get(product_type).unwrap()
             .insert(subscriber_value.url.clone(), subscriber_value);
         return subscriber;
+    }
+
+    pub fn list_all(product_type: &str) -> Vec<Subscriber> {
+        if SUBSCRIBERS.get(product_type).is_none() {
+            SUBSCRIBERS.insert(String::from(product_type), DashMap::new());
+        };
+
+        return SUBSCRIBERS.get(product_type).unwrap().iter()
+            .map(|f| f.value().clone()).collect();
     }
     
 }
