@@ -77,7 +77,12 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+1. Tergantung dari desain pattern, Dalam kasus BambangShop `Subscriber` merupakan satu class observer, sehingga tidak perlu dibuat Trait. ini mengurangi kompleksitas tetapi juga mengurangi fleksibilitas
 
+2. DashMap lebih baik dipakai di kasus ini, `id` dan `url` merupakan data yang unik, menggunakan vec akan membutuhkan iterasi untuk mencari data yang diinginkan, sedangkan DashMap dapat langsung mengakses data yang diinginkan. Apakah bisa memakai vec? Iya, tapi tidak ideal.
+
+3. DashMap merupakan built-in struktur data dengan dukungan concurrency, ini dibutuhkan karena Subscriber akan diakses oleh banyak thread sekaligus.
 #### Reflection Publisher-2
+
 
 #### Reflection Publisher-3
