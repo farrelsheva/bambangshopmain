@@ -65,11 +65,11 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement unsubscribe function in Notification controller.`
     -   [x] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
-    -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
-    -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
-    -   [ ] Commit: `Implement publish function in Program service and Program controller.`
-    -   [ ] Commit: `Edit Product service methods to call notify after create/delete.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
+    -   [x] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
+    -   [x] Commit: `Implement notify function in Notification service to notify each Subscriber.`
+    -   [x] Commit: `Implement publish function in Program service and Program controller.`
+    -   [x] Commit: `Edit Product service methods to call notify after create/delete.`
+    -   [x] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -90,3 +90,8 @@ This is the place for you to write reflections:
 3. Postman membantu saya dalam melakukan API testing, dengan fitur koleksi, endpoint yang sering digunakan dapat saya tulis dan test dengan satu klik, membuat proses testing menjadi lebih cepat dan efisien. 
 
 #### Reflection Publisher-3
+1. Dalam kasus ini model Push observer pattern dipakai, yang dimana saat terjadi perubahan pada subject, maka observer akan mendapatkan notifikasi dari Notification service yang mengirimkan notifikasi ke semua subscriber yang terdaftar.
+
+2. Jika kita menggunakan pull, ada beberapa keuntungan yang kita bisa dapatkan, salah satunya adalah observer bisa mendapatkan data yang hanya dia perlukan yang bisa jadi lebih efisien, dan mengurangi load di network dikarenakan tidak ada transfer data yang tidak diperlukan. Kerugian dari pull adalah observer perlu mengetahui struktur dari data yang dia inginkan, dan jika banyak observer yang "menarik" data dengan frekuensi yang tinggi maka akan membebani subject.
+
+3. Jika proses notifikasi tidak memakai multi-threading, maka akan secara signifikan lebih lambat dikarenakan adanya queue subscriber yang perlu dinotifikasi, mengakibatkan bottleneck pada setiap kali request notifikasi.
