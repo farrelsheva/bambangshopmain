@@ -56,14 +56,14 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement add function in Subscriber repository.`
     -   [x] Commit: `Implement list_all function in Subscriber repository.`
     -   [x] Commit: `Implement delete function in Subscriber repository.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
+    -   [x] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   [x] Commit: `Create Notification service struct skeleton.`
+    -   [x] Commit: `Implement subscribe function in Notification service.`
+    -   [x] Commit: `Implement subscribe function in Notification controller.`
+    -   [x] Commit: `Implement unsubscribe function in Notification service.`
+    -   [x] Commit: `Implement unsubscribe function in Notification controller.`
+    -   [x] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -83,6 +83,10 @@ This is the place for you to write reflections:
 
 3. DashMap merupakan built-in struktur data dengan dukungan concurrency, ini dibutuhkan karena Subscriber akan diakses oleh banyak thread sekaligus.
 #### Reflection Publisher-2
+1. Pemisahan `service` dan `repository` dilakukan dalam rangka memenuhi Single Responsibility Principle (SOLID). `service` bertanggung jawab untuk mengatur logika bisnis, sedangkan `repository` bertanggung jawab untuk mengatur akses data. Dengan pemisahan ini, kode akan lebih mudah di-maintain dan di-test.
 
+2. Jika layer `service` dan `repository` dihapus dan kita hanya memakai model untuk semua logic dan akses data, maka kode kita akan makin kompleks dan susah dibaca dikarenakan dependensi yang tinggi model pada satu sama lain model, Jika ada sebuah perubahan pada model, maka kita harus mengubah banyak bagian kode.
+
+3. Postman membantu saya dalam melakukan API testing, dengan fitur koleksi, endpoint yang sering digunakan dapat saya tulis dan test dengan satu klik, membuat proses testing menjadi lebih cepat dan efisien. 
 
 #### Reflection Publisher-3
