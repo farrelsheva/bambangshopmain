@@ -7,7 +7,8 @@ use rocket::{fairing::AdHoc, response::status::NotFound};
 pub fn route_stage() -> AdHoc {
     return AdHoc::on_ignite("Initializing controller routes...", |rocket| async {
         rocket
-            .mount("/product", routes![product::create, product::list, product::read, product::delete])
-            .mount("/notification", routes![notification::subscribe, notification::unsubscribe])
+        .mount("/product", routes![product::create, product::list, 
+        product::read, product::delete, product::publish])
+        .mount("/notification", routes![notification::subscribe, notification::unsubscribe])
     });
 }
